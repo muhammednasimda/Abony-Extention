@@ -1,21 +1,10 @@
 const orderDetails = document.getElementById("order_details");
 
-document.getElementById("fill_button").addEventListener("click", function () {
-  varuserinfo = JSON.parse(orderDetails.value);
+document.getElementById("fill_button").addEventListener("click", async () => {
+  const dataObject = await JSON.parse(orderDetails.value);
+  console.log(dataObject);
   chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
     var activeTab = tabs[0];
-    chrome.tabs.sendMessage(activeTab.id, {
-      id: 101,
-      name: "start",
-      address: "vavad",
-      phone: 9400410406,
-      pincode: 673571,
-      type: "BANK",
-      price: 1299,
-    });
+    chrome.tabs.sendMessage(activeTab.id, dataObject);
   });
 });
-
-function changeValue() {
-  console.log("hai");
-}

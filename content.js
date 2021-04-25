@@ -33,20 +33,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   document.execCommand("insertText", false, request.id);
 
   description.focus();
-  document.execCommand("insertText", false, "Womens Dress");
+  document.execCommand("insertText", false, request.description);
 
   commodity.focus();
   document.execCommand("insertText", false, request.price);
 
   tax.focus();
-  document.execCommand("insertText", false, 0);
+  document.execCommand("insertText", false, request.tax);
 
   quantity.focus();
-  document.execCommand("insertText", false, 1);
+  document.execCommand("insertText", false, request.quantity);
 
   category.focus();
-  document.execCommand("insertText", false, "Apparel");
+  document.execCommand("insertText", false, request.category);
 
   weight.focus();
-  document.execCommand("insertText", false, 300);
+  document.execCommand("insertText", false, request.weight);
 });
