@@ -1,0 +1,23 @@
+  
+{
+    "manifest_version": 2,
+  
+    "name": "Abony Paste",
+    "description": "Delhivery Paste Abony",
+    "version": "1.0.0",
+    "icons": { "128": "icon.png" },
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+       "matches": ["<all_urls>"],
+       "js": ["content.js"]
+      }
+    ],
+    "permissions": [
+      "activeTab",
+      "http://*/*","https://*/*"
+    ]
+  }
